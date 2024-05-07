@@ -13,7 +13,7 @@ const d = 0; // distance (km)
 const fuel = 5000; // remaining fuel (kg)
 const fbr = 0.5; // fuel burn rate (kg/s)
 
-const d2 = d * time + vel; //calcultes new distance
+const d2 = d * time + vel; //calculates new distance
 const rf = fuel - fbr * time; //calculates remaining fuel
 
 // Pick up an error with how the function below is called and make it robust to such errors
