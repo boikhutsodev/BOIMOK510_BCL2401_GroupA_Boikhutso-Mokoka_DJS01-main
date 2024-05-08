@@ -18,7 +18,6 @@ const props = {
 // conversion rate
 
 const conversionRate = props.time / 1000; // 1 hour = 1000 second
-console.log(conversionRate);
 
 // Pick up an error with how the function below is called and make it robust to such errors
 const calculatesNewVelocity = (props) => {
