@@ -15,10 +15,15 @@ const props = {
   fuelBurnRate: 0.5, // fuel burn rate (kg/s)
 };
 
+// conversion rate
+
+const conversionRate = props.time / 1000; // 1 hour = 1000 second
+console.log(conversionRate);
+
 // Pick up an error with how the function below is called and make it robust to such errors
 const calculatesNewVelocity = (props) => {
   const { velocity, acceleration, time } = props;
-  return velocity + acceleration * time * 3.6;
+  return velocity + acceleration * time * conversionRate;
 };
 
 const newDistance = props.distance * props.time + props.velocity; //calculates new distance
