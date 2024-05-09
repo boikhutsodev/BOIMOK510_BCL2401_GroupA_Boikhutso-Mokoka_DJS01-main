@@ -7,12 +7,30 @@
 
 // Given Parameters
 const props = {
-  velocity: 10000, // velocity (km/h)
-  acceleration: 3, // acceleration (m/s^2)
-  time: 3600, // seconds (1 hour)
-  distance: 0, // distance (km)
-  fuel: 5000, // remaining fuel (kg)
-  fuelBurnRate: 0.5, // fuel burn rate (kg/s)
+  velocity: {
+    value: 10000,
+    measurement: "km/h",
+  }, // velocity (km/h)
+  acceleration: {
+    value: 3,
+    measurement: "m/s^2",
+  }, // acceleration (m/s^2)
+  time: {
+    value: 3600,
+    measurement: "seconds",
+  }, // seconds (1 hour)
+  distance: {
+    value: 0,
+    measurement: "km",
+  }, // distance (km)
+  fuel: {
+    value: 5000,
+    measurement: "kg",
+  }, // remaining fuel (kg)
+  fuelBurnRate: {
+    value: 0.5,
+    measurement: "kg/s",
+  }, // fuel burn rate (kg/s)
 };
 
 // conversion rate
