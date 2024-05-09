@@ -35,7 +35,7 @@ const props = {
 
 // conversion rate
 
-const conversionRate = props.time.value / 1000; // 1 hour = 1000 second
+const conversionRate = props.time.value / 1000; // 1 hour
 
 // Pick up an error with how the function below is called and make it robust to such errors
 const calculatesNewVelocity = (props) => {
@@ -50,8 +50,6 @@ const calculatesNewVelocity = (props) => {
     time: { value: time },
   } = props;
 
-  // if ()
-
   return velocity + acceleration * time * conversionRate;
 };
 
@@ -64,3 +62,10 @@ const newVelocity = calculatesNewVelocity(props); //calculates new velocity base
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
 console.log(`Corrected New Distance: ${newDistance} km`);
 console.log(`Corrected Remaining Fuel: ${remainingFuel} kg`);
+
+// if(!velocityValue || isNaN(velocityValue)) throw Error("'Velocity' is required!");
+//   if(!accelerationValue || accelerationValue < 0 || isNaN(accelerationValue)) throw Error("'acceleration' is required!");
+//   if(!timeValue || timeValue < 0 || isNaN(timeValue) ) throw Error("'time' is required!");
+//   if(!velocityMeasurement || velocityMeasurement !== "km/h") throw Error("Correct 'Velocity' unit of measurement is required!");
+//   if(!accelerationMeasurement || accelerationMeasurement !== "m/s^2") throw Error("Correct 'acceleration' unit of measurement is required!");
+//   if(timeMeasurement !== "seconds" ) throw Error("Correct 'time' unit of measurement is required!");
