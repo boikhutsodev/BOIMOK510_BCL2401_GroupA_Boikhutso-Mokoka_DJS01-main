@@ -17,7 +17,7 @@ const props = {
   }, // acceleration (m/s^2)
   time: {
     value: 3600,
-    measurement: "seconds",
+    measurement: "s",
   }, // seconds (1 hour)
   distance: {
     value: 0,
@@ -35,16 +35,30 @@ const props = {
 
 // conversion rate
 
-const conversionRate = props.time / 1000; // 1 hour = 1000 second
+const conversionRate = props.time.value / 1000; // 1 hour = 1000 second
 
 // Pick up an error with how the function below is called and make it robust to such errors
 const calculatesNewVelocity = (props) => {
-  const { velocity, acceleration, time } = props;
+  // const { velocity, acceleration, time } = props;
+  const {
+    velocity: { value: velocity },
+  } = props;
+  const {
+    acceleration: { value: acceleration },
+  } = props;
+  const {
+    time: { value: time },
+  } = props;
+
+  // if ()
+
   return velocity + acceleration * time * conversionRate;
 };
 
-const newDistance = props.distance * props.time + props.velocity; //calculates new distance
-const remainingFuel = props.fuel - props.fuelBurnRate * props.time; //calculates remaining fuel
+const newDistance =
+  props.distance.value * props.time.value + props.velocity.value; //calculates new distance
+const remainingFuel =
+  props.fuel.value - props.fuelBurnRate.value * props.time.value; //calculates remaining fuel
 const newVelocity = calculatesNewVelocity(props); //calculates new velocity based on acceleration
 
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
