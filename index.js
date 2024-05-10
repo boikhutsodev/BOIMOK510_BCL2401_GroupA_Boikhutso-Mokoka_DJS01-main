@@ -50,6 +50,9 @@ const calculatesNewVelocity = (props) => {
     time: { value: time },
   } = props;
 
+  if (typeof velocity !== "number") throw Error("'Velocity' is required!");
+  if (typeof velocity !== "number") throw Error("'Velocity' is required!");
+
   return velocity + acceleration * time * conversionRate;
 };
 
