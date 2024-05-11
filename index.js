@@ -49,15 +49,6 @@ const calculatesNewVelocity = (props) => {
   const {
     time: { value: time },
   } = props;
-  const {
-    distance: { value: distance },
-  } = props;
-  const {
-    fuel: { value: fuel },
-  } = props;
-  const {
-    fuelBurnRate: { value: fuelBurnRate },
-  } = props;
 
   const {
     velocity: { measurement: velocityMeasurement },
@@ -69,14 +60,13 @@ const calculatesNewVelocity = (props) => {
     time: { measurement: timeMeasurement },
   } = props;
 
-  // Throw an error
+  // Check for valid input types
   if (typeof velocity !== "number") throw Error("Velocity' is required!");
   if (typeof acceleration !== "number")
     throw Error("acceleration' is required!");
   if (typeof time !== "number") throw Error("time' is required!");
-  if (typeof distance !== "number") throw Error("Velocity' is required!");
-  if (typeof fuel !== "number") throw Error("acceleration' is required!");
-  if (typeof fuelBurnRate !== "number") throw Error("time' is required!");
+
+  // Check for correct units
   if (typeof velocityMeasurement !== "km/h")
     throw Error("Correct 'Velocity' unit of measurement is required!");
   if (typeof accelerationMeasurement !== "m/s^2")
@@ -93,6 +83,7 @@ const remainingFuel =
   props.fuel.value - props.fuelBurnRate.value * props.time.value; //calculates remaining fuel
 const newVelocity = calculatesNewVelocity(props); //calculates new velocity based on acceleration
 
+// Output corrected results
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
 console.log(`Corrected New Distance: ${newDistance} km`);
 console.log(`Corrected Remaining Fuel: ${remainingFuel} kg`);
