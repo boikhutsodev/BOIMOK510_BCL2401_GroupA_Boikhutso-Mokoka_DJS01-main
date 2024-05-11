@@ -59,6 +59,17 @@ const calculatesNewVelocity = (props) => {
     fuelBurnRate: { value: fuelBurnRate },
   } = props;
 
+  const {
+    velocity: { measurement: velocityMeasurement },
+  } = props;
+  const {
+    acceleration: { measurement: accelerationMeasurement },
+  } = props;
+  const {
+    time: { measurement: timeMeasurement },
+  } = props;
+
+  // Throw an error
   if (typeof velocity !== "number") throw Error("Velocity' is required!");
   if (typeof acceleration !== "number")
     throw Error("acceleration' is required!");
@@ -66,6 +77,12 @@ const calculatesNewVelocity = (props) => {
   if (typeof distance !== "number") throw Error("Velocity' is required!");
   if (typeof fuel !== "number") throw Error("acceleration' is required!");
   if (typeof fuelBurnRate !== "number") throw Error("time' is required!");
+  if (typeof velocityMeasurement !== "km/h")
+    throw Error("Correct 'Velocity' unit of measurement is required!");
+  if (typeof accelerationMeasurement !== "m/s^2")
+    throw Error("Correct 'acceleration' unit of measurement is required!");
+  if (typeof timeMeasurement !== "seconds")
+    throw Error("Correct 'time' unit of measurement is required!");
 
   return velocity + acceleration * time * conversionRate;
 };
@@ -79,10 +96,3 @@ const newVelocity = calculatesNewVelocity(props); //calculates new velocity base
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
 console.log(`Corrected New Distance: ${newDistance} km`);
 console.log(`Corrected Remaining Fuel: ${remainingFuel} kg`);
-
-// if(!velocityValue || isNaN(velocityValue)) throw Error("'Velocity' is required!");
-//   if(!accelerationValue || accelerationValue < 0 || isNaN(accelerationValue)) throw Error("'acceleration' is required!");
-//   if(!timeValue || timeValue < 0 || isNaN(timeValue) ) throw Error("'time' is required!");
-//   if(!velocityMeasurement || velocityMeasurement !== "km/h") throw Error("Correct 'Velocity' unit of measurement is required!");
-//   if(!accelerationMeasurement || accelerationMeasurement !== "m/s^2") throw Error("Correct 'acceleration' unit of measurement is required!");
-//   if(timeMeasurement !== "seconds" ) throw Error("Correct 'time' unit of measurement is required!");
