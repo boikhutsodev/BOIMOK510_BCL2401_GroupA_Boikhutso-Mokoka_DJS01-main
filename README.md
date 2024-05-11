@@ -1,19 +1,42 @@
-### DJS01: Mars Climate Orbiter Challenge
+# Mars Climate Orbiter Challenge
 
-The Mars Climate Orbiter incident in 1999 is a stark reminder of the importance of precision in space missions, highlighting how a simple unit mismatch led to the loss of the spacecraft. This challenge seeks to simulate similar challenges in a spacecraft navigation system, emphasising the need for accuracy in calculations.
+## Debugging Guide
 
-#### Challenge Overview
+This project aims to debug and improve a piece of JavaScript code that calculates various parameters related to a vehicle's motion. The debugging guide outlines the following objectives:
 
-This challenge invites students to debug, refactor, and enhance JavaScript functions designed for determining the trajectory of a spacecraft. The initial functions are flawed and may result in incorrect calculations.
+1. **Make the code more readable**: Enhance code readability by organizing and simplifying the structure.
 
-![alt text](mars.gif)
+2. **Identify and rectify calculation errors**: Correct any errors in the calculations to ensure accurate results.
 
-##### Problem Areas to Address
+3. **Ensure calculations are robust against incorrect inputs**: Implement checks to ensure that the calculations handle incorrect inputs, such as wrong units of measurement or missing parameters, gracefully.
 
-1. **Unit Mismatch**: The provided functions fail to convert units correctly, leading to calculation inaccuracies.
-2. **Parameter Misalignment**: Parameters are not handled in a way that prevents or highlights the potential for unit mismatch errors, leading to possible confusion.
+## Description
 
-##### Initial Parameters
+The provided JavaScript code calculates parameters such as new velocity, new distance, and remaining fuel based on given initial conditions like velocity, acceleration, time, distance, fuel, and fuel burn rate. It includes a function `calculatesNewVelocity()` to compute the new velocity.
+
+## Improvements Made
+
+1. **Refactored Code**: Organized the code structure to improve readability and maintainability.
+
+2. **Corrected Calculations**: Fixed calculation errors to ensure accurate results.
+
+3. **Added Input Checks**: Implemented checks for input types and units of measurement to make the calculations robust against incorrect inputs.
+
+## Usage
+
+To use this code:
+
+1. Ensure you have Node.js installed on your system.
+2. Copy the provided JavaScript code into a `.js` file.
+3. Run the file using Node.js to see the corrected results.
+
+Example:
+
+```bash
+node filename.js
+
+
+#### Initial Parameters
 
 - **Initial Velocity (`vel`)**: The starting speed of the spacecraft, 10,000 km/h.
 - **Acceleration (`acc`)**: The spacecraft's acceleration, 3 m/s².
@@ -44,3 +67,4 @@ This challenge invites students to debug, refactor, and enhance JavaScript funct
 1. Enhance code readability for easier debugging.
 2. Identify and correct calculation errors.
 3. Improve the robustness of calculations. If incorrect units are used or other errors are detected, the code should notify the user instead of producing an incorrect result.
+```
