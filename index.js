@@ -49,9 +49,23 @@ const calculatesNewVelocity = (props) => {
   const {
     time: { value: time },
   } = props;
+  const {
+    distance: { value: distance },
+  } = props;
+  const {
+    fuel: { value: fuel },
+  } = props;
+  const {
+    fuelBurnRate: { value: fuelBurnRate },
+  } = props;
 
-  if (typeof velocity !== "number") throw Error("'Velocity' is required!");
-  if (typeof velocity !== "number") throw Error("'Velocity' is required!");
+  if (typeof velocity !== "number") throw Error("Velocity' is required!");
+  if (typeof acceleration !== "number")
+    throw Error("acceleration' is required!");
+  if (typeof time !== "number") throw Error("time' is required!");
+  if (typeof distance !== "number") throw Error("Velocity' is required!");
+  if (typeof fuel !== "number") throw Error("acceleration' is required!");
+  if (typeof fuelBurnRate !== "number") throw Error("time' is required!");
 
   return velocity + acceleration * time * conversionRate;
 };
