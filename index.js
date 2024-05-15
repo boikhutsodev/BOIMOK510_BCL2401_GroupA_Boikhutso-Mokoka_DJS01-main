@@ -67,12 +67,6 @@ const calculatesNewVelocity = (props) => {
   if (typeof time !== "number") throw Error("time' is required!");
 
   // Check for correct units
-  if (typeof velocityMeasurement !== "km/h")
-    throw Error("Correct 'Velocity' unit of measurement is required!");
-  if (typeof accelerationMeasurement !== "m/s^2")
-    throw Error("Correct 'acceleration' unit of measurement is required!");
-  if (typeof timeMeasurement !== "seconds")
-    throw Error("Correct 'time' unit of measurement is required!");
 
   return velocity + acceleration * time * conversionRate;
 };
